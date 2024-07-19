@@ -124,4 +124,3 @@ python controller.py
 ```
 Press the button to start program<br />
 All the scripts can be found above
-
