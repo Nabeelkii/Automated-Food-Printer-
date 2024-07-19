@@ -93,7 +93,12 @@ python motorreverse.py 10
 
 Connect the tact switch to Bcm pin 25, power to pin 1, and the other to ground
 
-Finally to setup the speaker connect the power and ground
+Finally to setup the speaker:<br />
+Amp Vin to Raspbery Pi 5V Power<br />
+Amp GND to Raspbery Pi Ground<br />
+Amp DIN to Raspbery Pi GPIO 21<br />
+Amp BCLK to Raspbery Pi GPIO 18<br />
+Amp LRCLK to Raspbery Pi GPIO 19<br />
 Run the following commands to setup:
 ```
 sudo apt install -y wget
