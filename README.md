@@ -1,4 +1,4 @@
-![alt text](https://github.com/Nabeelkii/Automated-Food-Printer/tree/master/Readme/product.jpg)
+![Picture of product](https://github.com/Nabeelkii/Automated-Food-Printer/tree/master/Readme/Product.jpg)
 Steps to replicate the project:
 
 Install this OS on raspberry pi:
