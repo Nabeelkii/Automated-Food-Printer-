@@ -11,13 +11,13 @@ Speech Recognition<br />
 Below are the steps to install both packages
 
 Steps to install adb:
-
+```
 sudo apt install adb 
 mkdir cli-tools
 wget -c https://dl.google.com/android/repository/platform-tools-latest-linux.zip
 unzip platform-tools-latest-linux.zip 
 cd platform-tools/
-
+```
 Test that the package is working using the command:
 ```
 adb devices
