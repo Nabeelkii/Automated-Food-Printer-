@@ -19,9 +19,9 @@ unzip platform-tools-latest-linux.zip
 cd platform-tools/
 
 Test that the package is working using the command:
-'''
+```
 adb devices
-'''
+```
 if this does not work download the raw folder from this website:
 https://pypi.org/project/pure-python-adb/
 
@@ -33,34 +33,34 @@ Note that your directory needs to be inside the adb package to be able to execut
 adb requires the ip address of the phone to run,the shell script aarun extracts the ip address of the connected phone and runs the script
 
 run adb using:
-'''
+```
 ./aarun.sh
-'''
+```
 
 
 Next install speech to text:
-'''
+```
 pip install SpeechRecognition
 sudo apt-get install -y python3-pyaudio
 sudo apt-get install flac
-'''
+```
 Use this command to check card number of audio device:
-'''
+```
 arecord -l
-'''
+```
 Use this command to change the card number according to the card number:
 sudo nano /use/share/alsa/alsa.conf
 
 Run speech.py using:
-'''
+```
 python speech.py
-'''
+```
 
 The raspberry pi needs to be connected to the internet for the package to work
 Check for internet connection using:
-'''
+```
 ping -c 4 8.8.8.8
-'''
+```
 Motor being used is L298N connected to a NIMA17
 Connect the raspberry pi GPIO pins to the L298N board as shown below:
 IN1:17
@@ -71,19 +71,19 @@ ENA:6
 ENB:13
 
 Run the following command to startup the motor:
-'''
+```
 python motorstartup.py
-'''
+```
 Run the following command to test the motor(the 10 at the end defines how many seconds to move the motor):
-'''
+```
 python motorforward.py 10     
 python motorreverse.py 10
-'''
+```
 
 Connect the tact switch to Bcm pin 25
 
 Run the following command to start the overall program:
-'''
+```
 python controller.py
-'''
+```
 Press the button to start program
