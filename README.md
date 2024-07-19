@@ -114,7 +114,7 @@ speaker-test -c2 --test=wav -w /usr/share/sounds/alsa/Front_Center.wav
 
 Ensure that all the audio files required for the project are working:
 ```
-speaker-test -c2 --test=wav -w /usr/share/sounds/alsa/Front_Center.wav
+./play_all_wav.sh
 ```
 This will play all the audio needed for this project in order
 
