@@ -10,7 +10,7 @@ Speech Recognition<br />
 
 Below are the steps to install both packages
 
-Next install adb:
+Steps to install adb:
 
 sudo apt install adb 
 mkdir cli-tools
@@ -32,15 +32,15 @@ Note that your directory needs to be inside the adb package to be able to execut
 
 adb requires the ip address of the phone to run,the shell script aarun extracts the ip address of the connected phone and runs the script
 
-run adb using:
+Run adb using:
 ```
 ./aarun.sh
 ```
 
 
-Next install speech to text:
+Steps to install SpeechRecognition:
 ```
-pip install SpeechRecognition
+pip install SpeechRecognition==3.8.1
 sudo apt-get install -y python3-pyaudio
 sudo apt-get install flac
 ```
@@ -49,8 +49,9 @@ Use this command to check card number of audio device:
 arecord -l
 ```
 Use this command to change the card number according to the card number:
+```
 sudo nano /use/share/alsa/alsa.conf
-
+```
 Run speech.py using:
 ```
 python speech.py
@@ -78,7 +79,7 @@ IN4:22<br />
 ENA:6<br />
 ENB:13<br />
 
-The ENA 
+The ENA pin needs to be connected and set to high in order for the motor to work. 
 
 Run the following command to startup the motor:
 ```
@@ -90,7 +91,26 @@ python motorforward.py 10
 python motorreverse.py 10
 ```
 
-Connect the tact switch to Bcm pin 25
+Connect the tact switch to Bcm pin 25, power to pin 1, and the other to ground
+
+Finally to setup the speaker connect the power and ground
+Run the following commands to setup:
+```
+sudo apt install -y wget
+wget https://github.com/adafruit/Raspberry-Pi-Installer-Scripts/raw/main/i2samp.py
+sudo -E env PATH=$PATH python3 i2samp.py
+```
+Reboot once install complete
+If it sounds really distorted, it could be the volume is too high. However, in order to have volume control appear in Raspbian desktop or Retropie you must reboot a second time after doing the speaker test, with sudo reboot.Once rebooted, try running alsamixer and use arrow keys to lower the volume, 50% is a good place to start.
+
+Use this command to test the speaker,it should generate white noise:
+```
+speaker-test -c2
+```
+Try to play an audio file with this command:
+```
+speaker-test -c2 --test=wav -w /usr/share/sounds/alsa/Front_Center.wav
+```
 
 Run the following command to start the overall program:
 ```
