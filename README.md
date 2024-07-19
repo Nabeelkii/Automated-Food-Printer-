@@ -56,19 +56,29 @@ Run speech.py using:
 python speech.py
 ```
 
-The raspberry pi needs to be connected to the internet for the package to work
+The raspberry pi needs to be connected to the internet for the above command to work
+
+
 Check for internet connection using:
+
 ```
 ping -c 4 8.8.8.8
 ```
+If there is no connection, try the below command to refresh the connection:
+```
+sudo dhclient -v wlan0
+```
+
 Motor being used is L298N connected to a NIMA17
-Connect the raspberry pi GPIO pins to the L298N board as shown below:
-IN1:17
-IN2:18
-IN3:27
-IN4:22
-ENA:6
-ENB:13
+Connect the raspberry pi GPIO pins to the L298N board as shown below:<br />
+IN1:17<br />
+IN2:18<br />
+IN3:27<br />
+IN4:22<br />
+ENA:6<br />
+ENB:13<br />
+
+The ENA 
 
 Run the following command to startup the motor:
 ```
@@ -87,3 +97,4 @@ Run the following command to start the overall program:
 python controller.py
 ```
 Press the button to start program
+All the scripts can be found above
