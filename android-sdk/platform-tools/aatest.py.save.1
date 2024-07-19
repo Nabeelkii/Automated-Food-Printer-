@@ -1,0 +1,52 @@
+import sys
+import time
+from ppadb.client import Client as AdbClient
+if len(sys.argv) < 2:
+        print("Not enough args")
+        sys.exit(1)
+
+PHONEIP = sys.argv[1]
+width = sys.argv[2]
+height = sys.argv[3]
+'''
+print("FROM PYTHON:")
+print(PHONEIP)
+print(f"Width:{width}")
+print(f"Height:{height}")
+'''
+
+try:
+    file_path = '/home/raspi6/output.txt'
+    with open(file_path, 'r') as file:
+        input = file.read().strip()
+except FileNotFoundError:
+    input = 'hello'
+
+client = AdbClient(host="127.0.0.1", port=5037)
+device = client.device(PHONEIP)
+
+#clearscreen
+pos1=str(int(width)-100)
+pos2=str((int(height)/25)*12)
+print(f"pos1:{pos1}")
+print(f"pos2:{pos2}")
+keyboard='input tap ' + pos1+' '+ pos2
+device.shell(keyboard)
+pos1=880
+pos2=1310
+print(f"pos1:{pos1}")
+p
+device.shell(keyboard)
+
+pos1=str(((int(width))/6)*2)
+pos2=str((int(height)/25)*11)
+keyboard='input tap ' + pos1+ ' ' + pos2
+device.shell(keyboard)
+time.sleep(.5)
+text='input text ' + input
+device.shell(text)
+pos1=str(int(width)-100)
+pos2=str((int(height)/25)*11)
+keyboard='input tap ' + pos1+' '+ pos2 
+device.shell(keyboard)
+
