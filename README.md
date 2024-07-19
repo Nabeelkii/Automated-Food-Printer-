@@ -112,9 +112,15 @@ Try to play an audio file with this command:
 speaker-test -c2 --test=wav -w /usr/share/sounds/alsa/Front_Center.wav
 ```
 
+Ensure that all the audio files required for the project are working:
+```
+speaker-test -c2 --test=wav -w /usr/share/sounds/alsa/Front_Center.wav
+```
+This will play all the audio needed for this project in order
+
 Run the following command to start the overall program:
 ```
 python controller.py
 ```
-Press the button to start program
+Press the button to start program<br />
 All the scripts can be found above
