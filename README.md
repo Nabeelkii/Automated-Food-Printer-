@@ -70,7 +70,7 @@ If there is no connection, try the below command to refresh the connection:
 sudo dhclient -v wlan0
 ```
 
-Motor being used is L298N connected to a NIMA17
+Motor being used is L298N connected to a NIMA17<br />
 Connect the raspberry pi GPIO pins to the L298N board as shown below:<br />
 IN1:17<br />
 IN2:18<br />
