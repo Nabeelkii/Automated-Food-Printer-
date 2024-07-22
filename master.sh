@@ -24,24 +24,30 @@ python motorstartup.py
 
 number=$(cat number.txt)
 if [ "$number" -ne 0 ]; then
-  number=$((number + 1))
+  number=$((number))
+  echo "$number"
+  python motorreverse.py $number 1
+  echo "0" > number.txt
+  echo "recovery complete"
+  exit 0
 fi
 
-echo "$number"
-python motorreverse.py $number
-
-echo "0" > number.txt
 
 sudo dhclient -v wlan0
 
 adb devices
 
-#python speech.py
+python speech.py
 
 /usr/lib/android-sdk/platform-tools/aarun.sh
 
 sudo python play_sound.py
 
-python motor.py 42
+python motor.py &
 
+number=$(cat output.txt)
+
+number=$(( (${#number} - 1) * 5 ))
+
+python ~/Adafruit_Python_SSD1306/examples/counting.py number
 

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo -E env "PATH=$PATH" 
+python speech.py
+
+/usr/lib/android-sdk/platform-tools/aarun.sh

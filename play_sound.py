@@ -1,6 +1,6 @@
 import sys
 import pygame
-
+import time
 # File setup for sounds
 path = "/home/raspi6/lettercontainer/"
 sound_files = ["0.wav", "1.wav", "2.wav", "3.wav", "4.wav", "5.wav", "6.wav", "7.wav", "8.wav", "9.wav", "A.wav", "B.wav", "C.wav", "D.wav", "E.wav", "F.wav", "G.wav", "H.wav", "I.wav", "J.wav", "K.wav", "L.wav", "M.wav", "N.wav", "O.wav", "P.wav", "Q.wav", "R.wav", "S.wav", "T.wav", "U.wav", "V.wav", "W.wav", "X.wav", "Y.wav", "Z.wav"]
@@ -196,8 +196,27 @@ for i in range(len(content)):
         while pygame.mixer.music.get_busy() == True:
             continue
 
+
+def Playalarm():
+     pygame.mixer.init(33000)
+     speaker_volume = 1.0 # set volume
+     pygame.mixer.music.set_volume(speaker_volume)
+
+     pygame.mixer.music.load(path + "beep.wav")
+     pygame.mixer.music.play()
+     while pygame.mixer.music.get_busy() == True: 
+           continue
+    
+time.sleep(0.5)
+pygame.mixer.music.load(path + "alarm.wav")
+pygame.mixer.music.play()
+while pygame.mixer.music.get_busy() == True: 
+    continue
+
 # close file
 file.close()
 pygame.display.quit()
 pygame.quit()
 sys.exit()
+
+

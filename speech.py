@@ -3,12 +3,13 @@ import speech_recognition as sr
 from gpiozero import LED
 import time
 import threading
-
+import subprocess
 
 
 r = sr.Recognizer()
 mic = sr.Microphone()
 
+subprocess.call("sudo python alarm.py",shell=True)
 print("Start talking")
 
 while True:

@@ -1,0 +1,34 @@
+import sys
+import speech_recognition as sr
+from gpiozero import LED
+import time
+import threading
+
+
+
+r = sr.Recognizer()
+mic = sr.Microphone()
+#led = LED(18)  # Define the GPIO pin number for the LED
+'''
+def blink_led(duration):
+    end_time = time.time() + duration
+    while time.time() < end_time:
+        led.on()
+        time.sleep(0.5)
+        led.off()
+        time.sleep(0.5)
+'''
+print("Start talking")
+
+while True:
+    with mic as source:
+#        blink_led_thread = threading.Thread(target=blink_led, args=(10,))
+#        blink_led_thread.start()
+        audio = r.listen(source)
+#        blink_led_thread.join()
+#        led.on()
+    words = r.recognize_google(audio)
+    print(words)
+    with open ("output.txt", "w") as file:
+        file.write(words)
+        sys.exit()

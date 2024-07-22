@@ -66,6 +66,8 @@ def spinreverse():
 
 try:
     duration = int(sys.argv[1])
+    if len(sys.argv)==3:
+         duration=duration+0.5
     end_time = time.time() + duration
     while time.time() < end_time:
         spinreverse()

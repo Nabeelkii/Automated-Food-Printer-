@@ -1,3 +1,4 @@
+from gpiozero import DigitalOutputDevice
 import time
 import os
 import signal
@@ -78,7 +79,6 @@ def handle_button():
 def button_pressed():
     handle_button()
 
-subprocess.call("python3 ~/Adafruit_Python_SSD1306/examples/StartUp.py",shell=True)
 # Attach event handlers
 tactile_switch.when_pressed = button_pressed
 

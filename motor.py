@@ -92,11 +92,15 @@ def spinreverse():
 elapsed=0
 
 try:    
-    #file = open('/home/raspi6/output.txt','r')
-    #content = file.read()
-    #wordlen=len(content)
-    #duration = wordlen*5
-    duration = int(sys.argv[1])
+    file = open('/home/raspi6/output.txt','r')
+    content = file.read()
+    wordlen=len(content)-1
+    print(wordlen)
+    duration = wordlen*5
+    print(duration)
+    if (duration>40):
+        duration=42
+    #duration = int(sys.argv[1])
     end_time = time.time() + duration
     print("going forward")
     while time.time() < end_time:
