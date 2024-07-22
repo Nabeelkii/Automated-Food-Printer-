@@ -51,3 +51,4 @@ number=$(( (${#number} - 1) * 5 ))
 
 python ~/Adafruit_Python_SSD1306/examples/counting.py number
 
+python ~/Adafruit_Python_SSD1306/examples/Reset.py
