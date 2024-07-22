@@ -2,9 +2,6 @@
 
 # Initialize variables
 ip_address=""
-width=""
-height=""
-
 # Run adb devices and parse the output line by line
 counter=0
 while IFS= read -r line; do
