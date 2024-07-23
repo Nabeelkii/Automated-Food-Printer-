@@ -6,7 +6,7 @@ from gpiozero import Button, LED
 
 # Pin definitions
 tactile_switch = Button(25)  # GPIO pin 36
-Green_LED = LED(26)  # GPIO pin 11
+#Green_LED = LED(26)  # GPIO pin 11
 
 # Paths to the scripts you want to run
 shell_script_path = './master.sh'  # Shell script path
@@ -36,7 +36,7 @@ def terminate_scripts():
 def turn_on_green_led():
     global led_on
     if not led_on:
-        Green_LED.on()  # Turn on LED
+        #Green_LED.on()  # Turn on LED
         start_scripts()  # Start up the scripts
         led_on = True
         print("Green LED turned on")
@@ -45,7 +45,7 @@ def turn_on_green_led():
 def turn_off_green_led():
     global led_on
     if led_on:
-        Green_LED.off()  # Turn off LED
+        #Green_LED.off()  # Turn off LED
         terminate_scripts()  # Shut down the scripts
         led_on = False
         print("Green LED turned off")
@@ -54,12 +54,12 @@ def turn_off_green_led():
 def toggle_green_led():
     global led_on
     if led_on:
-        Green_LED.off()  # Turn off LED
+        #Green_LED.off()  # Turn off LED
         terminate_scripts()  # Shut down the scripts
         led_on = False
         print("Green LED turned off")
     else:
-        Green_LED.blink(on_time=1, off_time=1)  # Blink LED
+        #Green_LED.blink(on_time=1, off_time=1)  # Blink LED
         start_scripts()  # Start up the scripts
         led_on = True
         print("Green LED blinking")
@@ -88,3 +88,4 @@ try:
 except KeyboardInterrupt:
     terminate_scripts()
     print("Main script exiting...")
+

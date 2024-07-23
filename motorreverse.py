@@ -73,8 +73,8 @@ try:
         spinreverse()
         elapsed=int((time.time()-end_time)*-1)
         #print(elapsed)
-        with open("number.txt","w") as file:
-             file.write(str(elapsed))
+        #with open("number.txt","w") as file:
+        #     file.write(str(elapsed))
 except KeyboardInterrupt:
     cleanup()
     exit( 1 )

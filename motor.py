@@ -95,9 +95,9 @@ try:
     file = open('/home/raspi6/output.txt','r')
     content = file.read()
     wordlen=len(content)-1
-    print(wordlen)
-    duration = wordlen*5
-    print(duration)
+    #print(wordlen)
+    duration = wordlen*5+1
+    print(str(duration) + " seconds")
     if (duration>40):
         duration=42
     #duration = int(sys.argv[1])
@@ -118,11 +118,12 @@ try:
         #print(elapsed)
         with open("number.txt", "w") as file:
             file.write(str(elapsed))
-
+    print("Movement complete")
 except KeyboardInterrupt:
     cleanup()
     exit( 1 )
  
+
 cleanup()
 exit( 0 )
 sys.exit()
